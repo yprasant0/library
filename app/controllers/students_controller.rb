@@ -16,9 +16,14 @@ class StudentsController < ApplicationController
   end
   def assignment
     @students=Student.all
+    $first_value = params[:id2]
+
   end
   def display
     @assigned = Student.find(params[:id])
+
+    @book_assigned = Book.find($first_value)
+
 
   end
 
