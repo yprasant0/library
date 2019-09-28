@@ -1,7 +1,6 @@
 
 <%= link_to "Enter New Book", new_book_path, class: "btn btn-primary" %>
 
-<p id="notice"><%= notice %></p>
 
 <table class="table">
   <thead class="thead-dark">
@@ -20,7 +19,7 @@
 
   <tr>
     <td><%= book.book_name %></td>
-    <td><%= book.description.split.first %></td>
+    <td><%= book.description.split.first    %><%=link_to "details", book %></td>
     <td><%= book.author %></td>
     <td><%= link_to "assign to students", assignments_new_path(:id2 => book.id) %></td>
     <%if !book.assigned.nil? %>

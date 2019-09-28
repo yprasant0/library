@@ -20,10 +20,9 @@ class StudentsController < ApplicationController
 
   end
   def display
-    @assigned = Student.find(params[:id])
+    @assigned = Student.find(params[:id1])
     @book_assigned = Book.find($first_value)
     @book_assigned.update_attribute(:assigned, @assigned.name)
-
 
   end
 
