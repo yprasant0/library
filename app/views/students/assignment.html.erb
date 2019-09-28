@@ -1,0 +1,19 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+
+    <th scope="col">Student</th>
+
+
+
+  </tr>
+  </thead>
+  <% @students.each do |student| %>
+    <tbody>
+    <tr>
+      <td><%= link_to student.name, display_path(:id =>student.id) %></td>
+      <td></td>
+  <%end%>
+  </tr>
+  </tbody>
+</table>

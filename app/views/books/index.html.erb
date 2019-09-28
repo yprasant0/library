@@ -1,0 +1,32 @@
+
+<%= link_to "Enter New Book", new_book_path, class: "btn btn-primary" %>
+
+<p id="notice"><%= notice %></p>
+
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+
+    <th scope="col">Book</th>
+    <th scope="col">Description</th>
+    <th scope="col">Author</th>
+    <th scope="col">Assign</th>
+
+  </tr>
+  </thead>
+  <% @books.each do |book| %>
+  <tbody>
+
+  <tr>
+    <td><%= book.book_name %></td>
+    <td><%= book.description.split.first %></td>
+    <td><%= book.author %></td>
+    <td><%= link_to "assign to students", assignments_new_path %></td>
+
+
+    <%end %>
+  </tr>
+  </tbody>
+</table>
+
+
