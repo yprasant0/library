@@ -19,7 +19,7 @@
 
   <tr>
     <td><%= book.book_name %></td>
-    <td><%= book.description.split.first    %><%=link_to "details", book %></td>
+    <td><%= book.description.split.first   %><%= link_to "    details", book %></td>
     <td><%= book.author %></td>
     <td><%= link_to "assign to students", assignments_new_path(:id2 => book.id) %></td>
     <%if !book.assigned.nil? %>
