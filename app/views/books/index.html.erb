@@ -11,7 +11,7 @@
     <th scope="col">Description</th>
     <th scope="col">Author</th>
     <th scope="col">Assign</th>
-    <th scope="col">Status</th>
+    <th scope="col">Assigned to</th>
 
   </tr>
   </thead>
@@ -23,9 +23,11 @@
     <td><%= book.description.split.first %></td>
     <td><%= book.author %></td>
     <td><%= link_to "assign to students", assignments_new_path(:id2 => book.id) %></td>
-
-
-
+    <%if !book.assigned.nil? %>
+      <td><%=book.assigned %></td>
+    <%else %>
+      <td>Not Assigned</td>
+    <%end %>
 
     <%end %>
   </tr>

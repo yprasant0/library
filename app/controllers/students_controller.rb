@@ -21,8 +21,8 @@ class StudentsController < ApplicationController
   end
   def display
     @assigned = Student.find(params[:id])
-
     @book_assigned = Book.find($first_value)
+    @book_assigned.update_attribute(:assigned, @assigned.name)
 
 
   end
