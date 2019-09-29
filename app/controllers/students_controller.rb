@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
       @book_assigned.update_attribute(:borrowed_date, Date.today)
     else
       flash[:notice] = "Already Assigned"
-      render 'new'
+      render "new"
       end
   end
 
