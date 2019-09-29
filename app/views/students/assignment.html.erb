@@ -11,8 +11,10 @@
   <% @students.each do |student| %>
     <tbody>
     <tr>
+      <%if student.book_id.nil? %>
       <td><%= link_to student.name, display_path(:id1 =>student.id) %></td>
       <td></td>
+        <%end %>
   <%end%>
   </tr>
   </tbody>
