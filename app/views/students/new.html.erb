@@ -1,6 +1,7 @@
 
-
 <p id="notice"><%= flash[:notice] %></p>
+<div align="center">
+
 
 <%if !@student.nil? %><h1>Enter a New Student</h1>
 <%= form_for @student, url: students_path do |f| %>
@@ -26,3 +27,4 @@
 
 <% end %>
 <%end %>
+</div>
