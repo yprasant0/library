@@ -22,8 +22,14 @@ class StudentsController < ApplicationController
   def display
     @assigned = Student.find(params[:id1])
     @book_assigned = Book.find($first_value)
-    @book_assigned.update_attribute(:assigned, @assigned.name)
-
+    if(@book_assigned.assigned.nil?)
+      @assigned.update_attribute(:book_id, $first_value)
+      @book_assigned.update_attribute(:assigned, @assigned.name)
+      @book_assigned.update_attribute(:borrowed_date, Date.today)
+    else
+      flash[:notice] = "Already Assigned"
+      render 'new'
+      end
   end
 
   private
