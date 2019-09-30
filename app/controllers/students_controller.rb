@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     if @student.save
       flash[:success] = "Student was registered successfully!"
-      redirect_to books_path(@student)
+      redirect_to students_path(@student)
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class StudentsController < ApplicationController
       @book_assigned.update_attribute(:borrowed_date, Date.today)
     else
       flash[:notice] = "Already Assigned"
-      render "new"
+      redirect_to students_path(@student)
       end
   end
 
